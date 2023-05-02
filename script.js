@@ -63,6 +63,7 @@ $(document).ready(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   $("#hour8 .description").val(localStorage.getItem("hour8"));
+ // $("#hour8 .description").val(localStorage.setItem("hour8"));
   $("#hour9 .description").val(localStorage.getItem("hour9"));
   $("#hour10 .description").val(localStorage.getItem("hour10"));
   $("#hour11 .description").val(localStorage.getItem("hour11"));
