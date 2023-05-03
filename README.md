@@ -35,7 +35,11 @@ THEN the saved events persist
 ## Notes
 
 ```
-I added color code to the header so it can be more user-friendly
+I added color code labels under the header so it can be more user-friendly
+```
+<img src="./color-code.png"/>
+
+```
 I demonstrated the ability of using google fonts and chose and awesome font for the user to enjoy
 ```
 

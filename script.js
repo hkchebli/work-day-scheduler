@@ -3,6 +3,7 @@
 // in the html.
 var today = dayjs();
 var saveButton = $(".saveBtn");
+var descriptionField=$(".description");
 // TODO: Add a listener for click events on the save button. This code should
 // use the id in the containing time-block as a key to save the user input in
 // local storage. HINT: What does `this` reference in the click listener
@@ -31,8 +32,9 @@ $(document).ready(function () {
     console.log(today.hour());
     var currentTime = today.hour();
     $(".time-block").each(function () {
-
-      var timePeriod = parseInt($(this).attr("id").split("hour-")[1]);
+      var blockSectionId=$(this).attr("id");
+      $(this).children(".description").first().text(localStorage.getItem(blockSectionId));
+      var timePeriod = parseInt(blockSectionId.split("hour-")[1]);
       console.log(timePeriod);
       //timePeriod.preventDefault();
       // To check the time and add the classes for background indicators
@@ -62,18 +64,29 @@ $(document).ready(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $("#hour8 .description").val(localStorage.getItem("hour8"));
- // $("#hour8 .description").val(localStorage.setItem("hour8"));
-  $("#hour9 .description").val(localStorage.getItem("hour9"));
-  $("#hour10 .description").val(localStorage.getItem("hour10"));
-  $("#hour11 .description").val(localStorage.getItem("hour11"));
-  $("#hour12 .description").val(localStorage.getItem("hour12"));
-  $("#hour13 .description").val(localStorage.getItem("hour13"));
-  $("#hour14 .description").val(localStorage.getItem("hour14"));
-  $("#hour15 .description").val(localStorage.getItem("hour15"));
-  $("#hour16 .description").val(localStorage.getItem("hour16"));
-  $("#hour17 .description").val(localStorage.getItem("hour17"));
+ 
+ /* var hour9=localStorage.getItem("hour9");
+  var hour10=localStorage.getItem("hour10");
+  var hour11=localStorage.getItem("hour11");
+  var hour12=localStorage.getItem("hour12");
+  var hour13=localStorage.getItem("hour13");
+  var hour14=localStorage.getItem("hour14");
+  var hour15=localStorage.getItem("hour15");
+  var hour16=localStorage.getItem("hour16");
+  var hour17=localStorage.getItem("hour17");
+  
 
+  $("#hour9 .description").val(hour9);
+  $("#hour10 .description").val(hour10);
+  $("#hour11 .description").val(hour11);
+  $("#hour12 .description").val(hour12);
+  $("#hour13 .description").val(hour13);
+  $("#hour14 .description").val(hour14);
+  $("#hour15 .description").val(hour15);
+  $("#hour16 .description").val(hour16);
+  $("#hour17 .description").val(hour17);
+
+  */
   // TODO: Add code to display the current date in the header of the page.
 
   $('#currentDay').text(today.format('dddd, MMMM D YYYY, h:mm:ss a'));
